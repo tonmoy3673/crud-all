@@ -14,6 +14,7 @@ const AddProducts =()=>{
         }
         console.log(user);
     }
+    
 
     return(
         <div className="grid grid-cols-1 md:grid-cols-5 items-center justify-center py-6 gap-y-5 md:gap-y-0">
