@@ -26,22 +26,23 @@ const AddProducts =()=>{
                 <h2 className="mb-6 text-center text-xl text-white">Add Product Here</h2>
                     <div className="text-white text-center mb-5 pt-3">
                         <label htmlFor="name">Name : </label>
-                        <input id="name" className="px-2 rounded-md" type="text" placeholder="Enter Name"/>
+                        <input id="name" className="px-2 rounded-md" type="text" required placeholder="Enter Name"/>
                     </div>
                     <div className="text-white text-center mb-5">
                         <label htmlFor="email">Email : </label>
-                        <input id="email" className="text-black px-2 rounded-md" type="email" placeholder="Enter Email"/>
+                        <input id="email" className="text-black px-2 rounded-md" type="email" required placeholder="Enter Email"/>
                     </div>
                     <div className="text-white text-center mb-5">
                         <label htmlFor="age">Age : </label>
-                        <input id="age" className="text-black px-2 rounded-md" type="text" placeholder="Enter Age"/>
+                        <input id="age" className="text-black px-2 rounded-md" type="text" required placeholder="Enter Age"/>
                     </div>
-                    <div className="text-white text-center flex items-center mb-5 justify-center gap-3">
+                    <div className="text-white text-center flex items-center mb-5 justify-center gap-2">
                         <label htmlFor="details">Details : </label>
-                        <textarea id="details" className="text-black px-2 rounded-md w-36" type="text" placeholder="Write Description"/>
+                        <textarea id="details" className="text-black px-2 rounded-md" rows="4" cols="25" type="text" required placeholder="Write Description"/>
+                        
                     </div>
                     <div className="text-white text-center py-3 mt-3">
-                        <button type="submit" className="bg-teal-600 px-3 py-2 rounded-md text-sm">Submit</button>
+                        <button type="submit" className="bg-teal-600 px-3 py-2 rounded-md text-sm transition-transform hover:bg-amber-500  duration-500 hover:scale-125">Submit</button>
                     </div>
                 </form>
             </div>
