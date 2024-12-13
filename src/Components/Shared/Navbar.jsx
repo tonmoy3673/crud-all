@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar=()=>{
     return (
-        <div className="py-5 md:py-8 flex items-center justify-between">
+        <div className="py-5 md:py-8 flex items-center justify-between px-5 md:px-0 ">
             <div>
                 <Link to='/home' className="uppercase text-2xl text-teal-600 font-semibold ">All <span className="text-amber-500">Crud</span></Link>
             </div>
@@ -18,6 +18,9 @@ const Navbar=()=>{
                 </NavLink>
                 <NavLink className="text-teal-600 font-semibold hover:text-amber-500 hover:scale-110 transition-all duration-400">
                     Feedback
+                </NavLink>
+                <NavLink to='/add' className="text-teal-600 font-semibold hover:text-amber-500 hover:scale-110 transition-all duration-400">
+                    Add Users
                 </NavLink>
             </nav>
         </div>
