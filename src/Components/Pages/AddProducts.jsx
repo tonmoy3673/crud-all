@@ -1,7 +1,7 @@
 
 import userImage from "../../assets/Images/user.jpg";
 const AddProducts =()=>{
-    const handleForm=(e)=>{
+    const handleForm=async(e)=>{
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
@@ -12,9 +12,27 @@ const AddProducts =()=>{
         const user ={
             name,email,age,details
         }
-        console.log(user);
+
+        try {
+            const response = await fetch('http://localhost:5000/users',{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            const data = await response.json();
+            console.log(data);
+
+           
+        } catch (error) {
+            console.log(error.message);
+        }
+        
     }
-    
+
+
+
 
     return(
         <div className="grid grid-cols-1 md:grid-cols-5 items-center justify-center py-6 gap-y-5 md:gap-y-0">
