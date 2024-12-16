@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import User from "./User";
 
 const Users =()=>{
     const [users,setUsers]= useState([]);
+    const [userLength,setUserLength]=useState(3);
     
     useEffect(()=>{
     const fetchUsers =async ()=>{
@@ -15,7 +17,14 @@ const Users =()=>{
 console.log(users);
     return (
         <div>
-
+            <div className="pb-5">
+                <h2 className="text-green-600 text-2xl font-semibold py-4 text-center">All Users</h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-10 items-center justify-center mt-9">
+                {
+                    users && users.slice(0,userLength).map((user)=><User key={user._id} user={user}/>)
+                }
+            </div>
         </div>
     )
 };
