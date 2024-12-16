@@ -1,4 +1,5 @@
 
+import Swal from "sweetalert2";
 import userImage from "../../assets/Images/user.jpg";
 const AddProducts =()=>{
     const handleForm=async(e)=>{
@@ -21,11 +22,28 @@ const AddProducts =()=>{
                 },
                 body: JSON.stringify(user)
             })
-            const data = await response.json();
-            console.log(data);
+         const result= await Swal.fire({
+                title: "Do you want to Add new User?",
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Add",
+                denyButtonText: `Don't Add`
+              })
+              if (response.ok) {
+                if (result.isConfirmed) {
+                    const data = await response.json();
+                    form.reset();
+                    console.log(data);
+                    Swal.fire("Saved!", "", "success");
+                  } else if (result.isDenied) {
+                    Swal.fire("Changes are not saved", "", "info");
+                  }
+              }  
 
            
-        } catch (error) {
+        } 
+        
+        catch (error) {
             console.log(error.message);
         }
         
