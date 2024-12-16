@@ -25,6 +25,9 @@ console.log(users);
                     users && users.slice(0,userLength).map((user)=><User key={user._id} user={user}/>)
                 }
             </div>
+            <div className="mt-5 text-center ">
+                <button className="bg-green-600 text-white px-3 py-2 rounded-md text-sm transform hover:scale-110 transition-transform duration-500">Show More</button>
+            </div>
         </div>
     )
 };
