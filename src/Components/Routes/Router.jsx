@@ -21,6 +21,7 @@ export const Router =createBrowserRouter([
                 path:'/about',
                 element:<About/>
             },
+            
             {
                 path:'/add',
                 element:<AddProducts/>
